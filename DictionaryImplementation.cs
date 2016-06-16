@@ -16,9 +16,19 @@ public class Example
         openWith.Add("bmp", "paint.exe");
         openWith.Add("dib", "paint.exe");
         openWith.Add("rtf", "wordpad.exe");
+	openWith.Add("rtg", "LibraUbuntu.exe");
 
         // The Add method throws an exception if the new key is 
         // already in the dictionary.
+
+	 try
+        {
+            openWith.Add("rtg", "LibraUbuntu.exe");
+        }
+        catch (ArgumentException)
+        {
+            Console.WriteLine("An element with Key = \"rtg\" already exists.");
+        }
         try
         {
             openWith.Add("txt", "winword.exe");
